@@ -9,3 +9,4 @@ module.exports = (app) => {
     app.post("/api/dance/:id",DogController.boogie);
     app.delete("/api/dogs/:id",DogController.adopt)
 }
+
