@@ -3,6 +3,7 @@ import './App.css';
 import {Router, Link} from "@reach/router";
 import NewDog from "./Components/NewDog";
 import AllDogs from "./Components/AllDogs";
+import EditDog from "./Components/EditDog";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Router>
           <AllDogs path="/" />
           <NewDog path="/new" />
+          <EditDog path="/edit/:_id" />
         </Router>
     </div>
   );

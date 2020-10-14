@@ -19,11 +19,9 @@ const NewDog = (props) => {
         if(res.data.errors) {
           setErrors(res.data.errors);
         } else {
-            //we'll do something
+            navigate("/");
           }
-        
-        // fetchDogs();
-      })
+        })
       .catch(err => console.log(err));
   }
 
