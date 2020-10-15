@@ -40,7 +40,7 @@ const EditDog = (props) => {
     axios.delete(`http://localhost:8000/api/dogs/${props._id}`)
       .then(res => {
           navigate("/");
-        })
+      })
       .catch(err => console.log(err));
   }
 
@@ -64,8 +64,8 @@ const EditDog = (props) => {
       <p>{errors.age.message}</p>:
       ""
     }
-    <input type="submit" value="Update Dog" />
-    <button onClick={adoptDog}>Adopt Dog </button>
+    <input type="submit" value="Update Dog Info" />
+    <button onClick={adoptDog}>Adopt This Dog </button>
   </form>
   )
 

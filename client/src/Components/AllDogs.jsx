@@ -17,11 +17,11 @@ const AllDogs = (props) => {
 
   useEffect(() => {
     fetchDogs();
-  }, []);
+  }, [props]);
 
   return (
-    <div>
-    {dogs.map( x => <Dog key={ x._id } dog={ x } /> )}
+    <div className="row">
+      {dogs.map( x => <Dog key={ x._id } dog={ x } edit={_id => props.edit(_id)}/> )}
     </div>
     
   );

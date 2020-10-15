@@ -1,0 +1,12 @@
+.my-modal {
+    display: none;
+    position: fixed;
+    height: 300px;
+    width: 400px;
+    top: calc(50vh - 150px);
+    left: calc(50vw - 200px);
+}
+
+.is-active {
+    display: block;
+}

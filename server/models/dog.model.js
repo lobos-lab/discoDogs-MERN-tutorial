@@ -17,7 +17,7 @@ const DiscoDog = new mongoose.Schema(
     age:{
         type: Number,
         required:[true, "A dog must have an age"],
-        min:[1, "A dog mutt be at least 1 to get into the disco"]
+        min:[1, "A dog must be at least 1 to get into the disco"]
     },
 
     moves:[DanceMove],
