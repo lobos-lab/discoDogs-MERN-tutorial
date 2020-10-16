@@ -17,8 +17,15 @@ const Dog = (props) => {
           <p>Age: { props.dog.age } </p>
           </div>
 
+          <ul className="list-group-flush">
+            <li className="list-group-item active">Moves: </li>
+            {
+              props.dog.moves.map((m,i) => <li className="list-group-item" key={i}>{m.move}</li>)
+            }
+          </ul>
+
           <div className="card-footer">
-          <button className="btn btn-link" onClick={e => props.edit(props.dog._id)}>Edit</button>
+          <button className="btn btn-link" onClick={e => props.edit(props.dog._id)}>Edit Info</button>
           </div>
 
         </div>

@@ -45,7 +45,7 @@ const EditDog = (props) => {
   }
 
   return(
-    <form onSubmit={ updateDog }>
+    <form className="form-group" onSubmit={ updateDog }>
     <p>Name:  <input type="text" onChange={ e => setName(e.target.value) } value={ name } /> </p>
     {
       errors.name ?

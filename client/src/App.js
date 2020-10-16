@@ -5,6 +5,7 @@ import axios from "axios";
 import NewDog from "./Components/NewDog";
 import AllDogs from "./Components/AllDogs";
 import EditDog from "./Components/EditDog";
+import Move from "./Components/Move";
 
 
 function App() {
@@ -26,7 +27,6 @@ function App() {
         if(res.data.errors) {
           setErrors(res.data.errors);
         } else {
-          // *TODO: something instead of: navigate("/");
           setChanges(!changes);
         }
       })
@@ -37,8 +37,7 @@ function App() {
     e.preventDefault();
     axios.delete(`http://localhost:8000/api/dogs/${edit}`)
       .then(res => {
-          // *TODO: something instead of: navigate("/");
-          setChanges(!changes);
+        setChanges(!changes);
       })
       .catch(err => console.log(err));
   }
@@ -67,14 +66,19 @@ function App() {
         </li>
 
         <li className="nav-item" onClick={ e => setActive("/new")}>
-        < Link className={ active === "/new" ? "nav-link active" : "nav-link" } to="/new">New Dog</Link>
+          <Link className={ active === "/new" ? "nav-link active" : "nav-link" } to="/new">New Dog</Link>
+        </li>
+
+        <li className="nav-item" onClick={ e => setActive("/move")}>
+          <Link className={ active === "/move" ? "nav-link active" : "nav-link" } to="/move">New Move</Link>
         </li>
       </ul>
 
       <Router>
         <AllDogs path="/" edit={ _id => setEdit(_id) } changes={changes}/>
         <NewDog path="/new" />
-        <EditDog path="/edit/:_id" />
+        <Move path="/move" />
+        {/* <EditDog path="/edit/:_id" /> */}
       </Router>
 
       <div className={ edit ? "my-modal is-active" : "my-modal"}>

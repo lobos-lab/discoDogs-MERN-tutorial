@@ -12,12 +12,14 @@ const NewDog = (props) => {
   const addDog = (e) => {
     e.preventDefault();
     const newDog = {name, age, breed};
+    console.log("1: ", newDog)
     axios.post("http://localhost:8000/api/dogs", newDog)
       .then(res => {
         console.log(res);
         if(res.data.errors) {
           setErrors(res.data.errors);
         } else {
+          console.log(res.data)
             navigate("/");
           }
         })

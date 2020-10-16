@@ -11,8 +11,11 @@ class DogController{
             .catch(err => res.json(err))
     }
     create(req,res){
+        console.log("3: ", req.body);
         Dog.create(req.body)
-            .then(newDog => res.json(newDog))
+            .then(newDog => {
+                console.log(newDog)
+                res.json(newDog)})
             .catch(err => res.json(err))
     }
     show(req,res){
